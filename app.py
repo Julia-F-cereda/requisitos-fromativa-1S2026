@@ -28,9 +28,9 @@ def api_enviar():
     enviar_dados(descricao, nivel, valor, situacao)
     return redirect("/requisitos")
 
-@app.route("/cadastro/deletar/<cod_requisito>")
-def api_excluir_musica(cod_requisito):
-excluir_dados(cod_requisito):
+@app.route("/cadastro/deletar/<id>")
+def api_excluir_musica(id):
+    excluir_dados(id)
     return redirect("/requisitos")
     
 

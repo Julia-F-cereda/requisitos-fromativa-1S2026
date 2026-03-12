@@ -18,7 +18,7 @@ def enviar_dados(descricao:str, nivel:str, valor: str, situacao:str) ->bool:
 def excluir_dados(cod_requisito):
     conexao, cursor = conectar()
 
-    cursor.execute("DELETE FROM tb_requisitos where cod_requisito= %s",[cod_requisito,])
+    cursor.execute("""DELETE FROM tb_requisitos where cod_requisito= %s""",[cod_requisito])
 
     conexao.commit()
     conexao.close()
