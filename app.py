@@ -3,6 +3,7 @@ import mysql.connector
 from model.cadastro import enviar_dados 
 from model.cadastro import retornar_dados
 from model.cadastro import excluir_dados
+from model.cadastro import alterar_sit
 
 app = Flask(__name__)
 
@@ -31,6 +32,12 @@ def api_enviar():
 @app.route("/cadastro/deletar/<id>")
 def api_excluir_musica(id):
     excluir_dados(id)
+    return redirect("/requisitos")
+
+
+@app.route("/cadastro/alterar/<cod_requisito>/<situacao>")
+def api_alterarSit(cod_requisito, situacao):
+    alterar_sit(situacao, cod_requisito)
     return redirect("/requisitos")
     
 
